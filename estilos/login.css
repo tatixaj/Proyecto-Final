@@ -132,8 +132,9 @@ button{
     }
 }
 /*Footer*/
-
-
+footer p{
+  color: white;
+}
 .footer-copyright a{
     text-decoration: none;
     font-size: 1.2 rem;

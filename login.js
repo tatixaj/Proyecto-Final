@@ -4,6 +4,24 @@ const pass = document.getElementById("password");
 const form = document.getElementById("form");
 const parrafo = document.getElementById("warnings");
 
+function entrar(){
+    const usu = document.getElementById('name').value;
+    const pass = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+    
+    //Si los campos estan completos, guarda la información de cada input en el localStorage
+   localStorage.setItem('usuario', usu)
+   localStorage.setItem('password', pass)
+   localStorage.setItem('email', email)
+   window.document.location = '/index.html'; 
+    
+}
+let usuario = localStorage.getItem("usu")
+let password = localStorage.getItem("pass")
+let mail = localStorage.getItem("email")
+
+
+
 //let botonVerificador = document.getElementById('boton-verificador');
 
 //let funcionIngresar = addEventListener('keypress', teclaEnter); 
@@ -34,4 +52,8 @@ form.addEventListener("submit", e=>{
         parrafo.innerHTML = "Acceso exitoso!"
     }
 })
-localStorage.setItem('nombre','email');
+
+//localStorage.setItem('nombre','email');
+
+
+

@@ -39,6 +39,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
     }
   }
 
+
   const shoppingCartRow = document.createElement('div');
   const shoppingCartContent = `
   <div class="row shoppingCartItem">
@@ -74,6 +75,8 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
     .addEventListener('change', quantityChanged);
 
   updateShoppingCartTotal();
+
+  guardarDatos ("listaCompra", JSON.stringify(shoppingCartContent));/*funcion de guardar datos en el local*/
 }
 
 function updateShoppingCartTotal() {
@@ -96,6 +99,8 @@ function updateShoppingCartTotal() {
     total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
   });
   shoppingCartTotal.innerHTML = `${total}$`;
+
+  guardarDatos ("listaCompra", JSON.stringify(shoppingCartContent));/*la llamo nuevamente para q se actualice el carrito si eliminan y refreszcan*/
 }
 
 function removeShoppingCartItem(event) {
@@ -114,3 +119,4 @@ function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
 }
+
